@@ -1,0 +1,29 @@
+# Render Blueprint — deploys SkillBridge as one all-in-one web service
+# (Express serves the API and the built React app).
+# Docs: https://render.com/docs/blueprint-spec
+services:
+  - type: web
+    name: skillbridge
+    runtime: node
+    plan: free
+    buildCommand: npm run render-build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      # Puppeteer: keep the Chromium download cache consistent between
+      # build and runtime so resume-PDF generation can find the browser.
+      - key: PUPPETEER_CACHE_DIR
+        value: /opt/render/project/src/.cache/puppeteer
+      - key: GEMINI_MODEL
+        value: gemini-flash-lite-latest
+      - key: GEMINI_THINKING_BUDGET
+        value: "0"
+      # Secrets — set these in the Render dashboard (Environment tab).
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: GOOGLE_GENAI_API_KEY
+        sync: false

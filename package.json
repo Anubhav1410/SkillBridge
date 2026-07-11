@@ -1,0 +1,15 @@
+{
+  "name": "skillbridge",
+  "version": "1.0.0",
+  "description": "AI-powered interview preparation platform (all-in-one deploy)",
+  "private": true,
+  "scripts": {
+    "render-build": "npm install --prefix Backend && npm install --prefix Frontend && npm run build --prefix Frontend",
+    "start": "npm start --prefix Backend"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "Anubhav Rajput",
+  "license": "ISC"
+}
