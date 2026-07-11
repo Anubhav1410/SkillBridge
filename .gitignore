@@ -18,8 +18,5 @@ npm-debug.log*
 .vscode/
 .idea/
 
-# Claude Code local settings
-.claude/
-
 # Puppeteer / build caches
 .cache/
