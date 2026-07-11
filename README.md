@@ -56,47 +56,6 @@ SkillBridge/
 
 ---
 
-## Getting Started
-
-### Prerequisites
-- Node.js 18+
-- A MongoDB connection string (e.g. [MongoDB Atlas](https://www.mongodb.com/atlas))
-- A free Google Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey)
-
-### 1. Backend
-
-```bash
-cd Backend
-npm install
-cp .env.example .env   # then fill in the values
-npm run dev            # starts on http://localhost:3000
-```
-
-`.env` values:
-
-| Variable                | Description                                     |
-| ----------------------- | ----------------------------------------------- |
-| `MONGO_URI`             | MongoDB connection string                       |
-| `PORT`                  | Server port (default `3000`)                    |
-| `CLIENT_URL`            | Frontend origin for CORS (`http://localhost:5173`) |
-| `JWT_SECRET`            | Long random string used to sign JWTs            |
-| `GOOGLE_GENAI_API_KEY`  | Google Gemini API key                           |
-| `GEMINI_MODEL`          | Gemini model id (default `gemini-flash-lite-latest`) |
-| `GEMINI_THINKING_BUDGET`| Model reasoning budget; `0` = fastest (default) |
-
-### 2. Frontend
-
-```bash
-cd Frontend
-npm install
-cp .env.example .env   # VITE_API_URL defaults to http://localhost:3000
-npm run dev            # starts on http://localhost:5173
-```
-
-Open **http://localhost:5173**, register an account, and generate your first interview plan.
-
----
-
 ## API Reference
 
 ### Auth — `/api/auth`
